@@ -1,7 +1,6 @@
 public class TesteComThreads {
 
-    public int VariavelCompartilhada = 0;
-    public int ValorDaVariavelCompartilhada = 0;
+    public int variavelCompartilhada = 0;
     
     public static void main(String[] args) {
         new TesteComThreads().executar();
@@ -11,8 +10,8 @@ public class TesteComThreads {
         Thread segundoThread = new ThreadQueDecrementaValorDaVariavel(this);
         segundoThread.start();
         while (true) {
-            VariavelCompartilhada++;
-            System.out.println("0 Variável vale: " + VariavelCompartilhada);
+            variavelCompartilhada++;
+            System.out.println("+ Variável vale: " + variavelCompartilhada);
             dormir(1500);
         }
     }
@@ -31,12 +30,13 @@ public class TesteComThreads {
         public ThreadQueDecrementaValorDaVariavel(TesteComThreads teste) {
             this.teste = teste;
         }
+        
 
         @Override
         public void run() {
             while (true) {
-                teste.ValorDaVariavelCompartilhada--;
-                System.out.println("1 Variável vale: " + teste.ValorDaVariavelCompartilhada);
+                teste.variavelCompartilhada--;
+                System.out.println("- Variável vale: " + teste.variavelCompartilhada);
                 teste.dormir(1000);
             }
         }
