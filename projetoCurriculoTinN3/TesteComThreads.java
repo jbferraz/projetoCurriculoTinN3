@@ -1,5 +1,7 @@
 public class TesteComThreads {
 
+    //Decrementa mais rápido que incrementa uma variável
+            
     public int variavelCompartilhada = 0;
     
     public static void main(String[] args) {
