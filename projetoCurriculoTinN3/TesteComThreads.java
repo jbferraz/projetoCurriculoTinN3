@@ -16,9 +16,9 @@ public class TesteComThreads {
         }
     }
 
-    public void dormir(int milisegundos) {
+    public void dormir(int milissegundos) {
         try {
-            Thread.sleep(milisegundos);
+            Thread.sleep(milissegundos);
         } catch (InterruptedException e) {
         }
     }
