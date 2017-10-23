@@ -1,9 +1,10 @@
+//Decrementa mais rápido que incrementa uma variável
+//Agora com multiplicação
+
 public class TesteComThreads {
 
-    //Decrementa mais rápido que incrementa uma variável
-            
     public int variavelCompartilhada = 0;
-    
+
     public static void main(String[] args) {
         new TesteComThreads().executar();
     }
@@ -11,6 +12,8 @@ public class TesteComThreads {
     public void executar() {
         Thread segundoThread = new ThreadQueDecrementaValorDaVariavel(this);
         segundoThread.start();
+        Thread terceiroThread = new ThreadQueMultiplicaValorDaVariavel(this);
+        terceiroThread.start();
         while (true) {
             variavelCompartilhada++;
             System.out.println("+ Variável vale: " + variavelCompartilhada);
@@ -32,7 +35,6 @@ public class TesteComThreads {
         public ThreadQueDecrementaValorDaVariavel(TesteComThreads teste) {
             this.teste = teste;
         }
-        
 
         @Override
         public void run() {
@@ -40,6 +42,24 @@ public class TesteComThreads {
                 teste.variavelCompartilhada--;
                 System.out.println("- Variável vale: " + teste.variavelCompartilhada);
                 teste.dormir(1000);
+            }
+        }
+    }
+
+    class ThreadQueMultiplicaValorDaVariavel extends Thread {
+
+        private TesteComThreads teste;
+
+        public ThreadQueMultiplicaValorDaVariavel(TesteComThreads teste) {
+            this.teste = teste;
+        }
+
+        @Override
+        public void run() {
+            while (true) {
+                teste.variavelCompartilhada *= 2;
+                System.out.println("* Variável vale: " + teste.variavelCompartilhada);
+                teste.dormir(2000);
             }
         }
     }
