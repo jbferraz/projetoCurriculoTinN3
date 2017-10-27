@@ -1,5 +1,5 @@
 ###################
-Projeto Portifólio
+Projeto Currículo
 ###################
 
 Um site php...
