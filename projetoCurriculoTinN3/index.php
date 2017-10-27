@@ -1,4 +1,5 @@
 <?php
+echo "test3";
 /**
  * CodeIgniter
  *
