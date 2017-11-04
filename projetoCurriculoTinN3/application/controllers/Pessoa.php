@@ -20,6 +20,14 @@ class Pessoa extends CI_Controller {
         /* Recebe os dados do formulário (visão) */
         $data['nome'] = $this->input->post('nome');
         $data['telefone'] = $this->input->post('telefone');
+        $data['dtNascimento'] = $this->input->post('dtNascimento');
+        $data['sexo'] = $this->input->post('sexo');
+        $data['email'] = $this->input->post('email');
+        $data['descricao'] = $this->input->post('descricao');
+        $data['estadocivil'] = $this->input->post('estadocivil');
+        $data['cpf'] = $this->input->post('cpf');
+        $data['Cidades_id'] = $this->input->post('Cidades_id');
+        $data['Cargos_id'] = $this->input->post('Cargos_id');
 
         /* Chama a função inserir do modelo */
         $result = $this->model->inserir($data);
@@ -51,9 +59,17 @@ class Pessoa extends CI_Controller {
     }
 
     function atualizar_pessoa() {
-        $data['id'] = $this->input->post('id');
+        $data['idpesoas'] = $this->input->post('idpessoas');
         $data['nome'] = $this->input->post('nome');
-        $data['sobrenome'] = $this->input->post('sobrenome');
+        $data['telefone'] = $this->input->post('telefone');
+        $data['dtNascimento'] = $this->input->post('dtNascimento');
+        $data['sexo'] = $this->input->post('sexo');
+        $data['email'] = $this->input->post('email');
+        $data['descricao'] = $this->input->post('descricao');
+        $data['estadocivil'] = $this->input->post('estadocivil');
+        $data['cpf'] = $this->input->post('cpf');
+        $data['Cidades_id'] = $this->input->post('Cidades_id');
+        $data['Cargos_id'] = $this->input->post('Cargos_id');
 
         if ($this->model->atualizar($data) == true) {
             $this->session->set_flashdata('true', 'msg');
