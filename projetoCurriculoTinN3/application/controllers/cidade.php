@@ -1,33 +1,24 @@
 <?php
-
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pessoa extends CI_Controller {
+class Cidade extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->model('Pessoa_model', 'model');
+        $this->load->model('Pessoa_model', 'pessoa');
     }
 
     public function index() {
         $this->load->view('template/header');
-        $data['titulo'] = "Cadastro de Pessoas";
-        $this->load->view('pessoa', $data);
+        $dados['titulo'] = "Cadastro de Pessoas";
+        $this->load->view('pessoa', $dados);
         $this->load->view('template/footer');
     }
 
     function inserir() {
         /* Recebe os dados do formulário (visão) */
-        $data['nome'] = $this->input->post('nome');
-        $data['telefone'] = $this->input->post('telefone');
-        $data['dtNascimento'] = $this->input->post('dtNascimento');
-        $data['sexo'] = $this->input->post('sexo');
-        $data['email'] = $this->input->post('email');
-        $data['descricao'] = $this->input->post('descricao');
-        $data['estadocivil'] = $this->input->post('estadocivil');
-        $data['cpf'] = $this->input->post('cpf');
-        $data['Cidades_id'] = $this->input->post('Cidades_id');
-        $data['Cargos_id'] = $this->input->post('Cargos_id');
+   
+        $data['cidades'] = $this->input->post('cidade');
 
         /* Chama a função inserir do modelo */
         $result = $this->model->inserir($data);
@@ -59,18 +50,10 @@ class Pessoa extends CI_Controller {
     }
 
     function atualizar_pessoa() {
-        $data['idpesoas'] = $this->input->post('idpessoas');
-        $data['nome'] = $this->input->post('nome');
-        $data['telefone'] = $this->input->post('telefone');
-        $data['dtNascimento'] = $this->input->post('dtNascimento');
-        $data['sexo'] = $this->input->post('sexo');
-        $data['email'] = $this->input->post('email');
-        $data['descricao'] = $this->input->post('descricao');
-        $data['estadocivil'] = $this->input->post('estadocivil');
-        $data['cpf'] = $this->input->post('cpf');
-        $data['Cidades_id'] = $this->input->post('Cidades_id');
-        $data['Cargos_id'] = $this->input->post('Cargos_id');
+        $data['id'] = $this->input->post('id');
+        $data['cidades'] = $this->input->post('cidades');
 
+       
         if ($this->model->atualizar($data) == true) {
             $this->session->set_flashdata('true', 'msg');
             redirect('pessoa');
@@ -81,3 +64,10 @@ class Pessoa extends CI_Controller {
     }
 
 }
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
