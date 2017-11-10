@@ -13,7 +13,12 @@
                 <label>Data De Nascimento</label>
                 <input class="form-control" type="date" name="dtnascimento" required="" placeholder="dtNascimento" maxlength="20">
                 <label>Sexo</label>
-                <input class="form-control" type="text" name="sexo" required="" placeholder="sexo" maxlength="20">
+                <select class="form-control" name="sexo" required="">
+                    <option value="" selected="selected">Selecione...</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Outro">Outro</option>
+                </select>
                 <label>E-mail</label>
                 <input class="form-control" type="email" name="email" required="" placeholder="email" maxlength="20">
                 <label>Descrição</label>
