@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = 'http://localhost/projetoCurriculoTinN3/projetoCurriculoTinN3/';
-$config['base_url'] = 'http://projetocurriculo-com-br.umbler.net';
+$config['base_url'] = 'http://projetocurriculo-com-br.umbler.net/projetoCurriculoTinN3/projetoCurriculoTinN3/';
 
 /*
 |--------------------------------------------------------------------------
