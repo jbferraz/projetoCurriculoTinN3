@@ -23,8 +23,17 @@
                 <input class="form-control" type="email" name="email" required="" placeholder="email" maxlength="20">
                 <label>Descrição</label>
                 <input class="form-control" type="text" name="descricao" required="" placeholder="descriçao" maxlength="20">
-                <label>Estado Civil</label>
-                <input class="form-control" type="text" name="estadocivil" required="" placeholder="estadocivil" maxlength="20">
+                 <label>Estado Civil</label>
+                <select class="form-control" name="sexo" required="">
+                    <option value="" selected="selected">Selecione...</option>
+                    <option value="Masculino">Solteiro</option>
+                    <option value="Feminino">Casado</option>
+                    <option value="Viuvo">Viúvo</option>
+
+                     <option value="Divorciado">Divorciado</option>
+
+                  
+                </select>
                 <label>CPF</label>
                 <input class="form-control" type="text" name="cpf" required="" placeholder="cpf" maxlength="20">
                 <label>Cidades</label>
