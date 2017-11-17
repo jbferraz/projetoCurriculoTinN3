@@ -5,13 +5,13 @@ class Cidade extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->model('Pessoa_model', 'pessoa');
+        $this->load->model('Cidade_model', 'cidade');
     }
 
     public function index() {
         $this->load->view('template/header');
         $dados['titulo'] = "Cadastro de Pessoas";
-        $this->load->view('pessoa', $dados);
+        $this->load->view('cidade', $dados);
         $this->load->view('template/footer');
     }
 
@@ -24,10 +24,10 @@ class Cidade extends CI_Controller {
         $result = $this->model->inserir($data);
         if ($result == true) {
             $this->session->set_flashdata('true', 'msg');
-            redirect('pessoa');
+            redirect('cidade');
         } else {
             $this->session->set_flashdata('err', 'msg');
-            redirect('pessoa');
+            redirect('cidade');
         }
     }
 
@@ -35,31 +35,31 @@ class Cidade extends CI_Controller {
         $result = $this->model->deletar($id);
         if ($result == true) {
             $this->session->set_flashdata('true', 'msg');
-            redirect('pessoa');
+            redirect('cidade');
         } else {
             $this->session->set_flashdata('err', 'msg');
-            redirect('pessoa');
+            redirect('cidade');
         }
     }
 
-    function editar_pessoas($id) {
-        $data['pessoa_editar'] = $this->model->editar($id);
+    function editar_cidades($id) {
+        $data['cidade_editar'] = $this->model->editar($id);
         $this->load->view('template/header');
-        $this->load->view('editar_pessoa', $data);
+        $this->load->view('editar_cidade', $data);
         $this->load->view('template/footer');
     }
 
-    function atualizar_pessoa() {
+    function atualizar_cidade() {
         $data['id'] = $this->input->post('id');
         $data['cidades'] = $this->input->post('cidades');
 
        
         if ($this->model->atualizar($data) == true) {
             $this->session->set_flashdata('true', 'msg');
-            redirect('pessoa');
+            redirect('cidade');
         } else {
             $this->session->set_flashdata('err', 'msg');
-            redirect('pessoa');
+            redirect('cidade');
         }
     }
 
@@ -70,4 +70,9 @@ class Cidade extends CI_Controller {
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+
+
+
+
 
