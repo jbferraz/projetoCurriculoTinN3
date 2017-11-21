@@ -50,7 +50,7 @@ class Pessoas_model extends CI_Model {
         else
             return false;
     }
-    
+
     function delete($id)
     {
         $this->db->where('idpessoas', $id);
@@ -61,7 +61,6 @@ class Pessoas_model extends CI_Model {
         else
             return false;
     }
-
 
     /*
     function inserir($p) {

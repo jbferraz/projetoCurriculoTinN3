@@ -31,22 +31,18 @@ class Pessoas extends CI_Controller {
 
     function submit()
 	{
-        $fields = array
-        (
-            'nome' => $this->input->post('nome'),
-            'telefone' => $this->input->post('telefone'),
-            'dtNascimento' => $this->input->post('dtNascimento'),
-            'sexo' => $this->input->post('sexo'),
-            'email' => $this->input->post('email'),
-            'descricao' => $this->input->post('descricao'),
-            'estadocivil' => $this->input->post('estadocivil'),
-            'cpf' => $this->input->post('cpf'),
-            'Cidades_id' => $this->input->post('cidades'),
-            'Cargos_id' =>$this->input->post('cargos'),
-        );
+        $this->load->helper('duplicated');
+        $pessoas = $this->ps_m->getPessoas();
         
-		$result = $this->ps_m->submit($fields);
-		redirect(base_url('pessoas/be_index'));
+        $fields = getPostPessoas($this);
+
+        $test = duplicatedPessoas($pessoas, $fields, null);
+        if ($test) {
+            redirect(base_url('pessoas/be_add/'.$id));
+        } else {
+            $result = $this->ps_m->submit($fields);
+            redirect(base_url('pessoas/be_index'));
+        }
 	}
 
     function be_edit($id)
@@ -59,25 +55,20 @@ class Pessoas extends CI_Controller {
 	}
 
     function update()
-	{	
-        $fields = array
-        (
-            'nome' => $this->input->post('nome'),
-            'telefone' => $this->input->post('telefone'),
-            'dtNascimento' => $this->input->post('dtNascimento'),
-            'sexo' => $this->input->post('sexo'),
-            'email' => $this->input->post('email'),
-            'descricao' => $this->input->post('descricao'),
-            'estadocivil' => $this->input->post('estadocivil'),
-            'cpf' => $this->input->post('cpf'),
-            'Cidades_id' => $this->input->post('cidades'),
-            'Cargos_id' =>$this->input->post('cargos'),
-        );
+	{
+        $this->load->helper('duplicated');
+        $pessoas = $this->ps_m->getPessoas();
 
-		$id = $this->input->post('txt_hidden_id');
-		$result = $this->ps_m->update($id, $fields);
+        $fields = getPostPessoas($this);
+        $id = $this->input->post('hidden_id');
 
-		redirect(base_url('pessoas/be_index'));
+        $test = duplicatedPessoas($pessoas, $fields, $id);
+        if ($test) {
+            redirect(base_url('pessoas/be_edit/'.$id));
+        } else {
+            $result = $this->ps_m->update($id, $fields);
+            redirect(base_url('pessoas/be_index'));
+        }
 	}
 
     function delete($id)
@@ -87,14 +78,13 @@ class Pessoas extends CI_Controller {
 		redirect(base_url('pessoas/be_index'));
 	}
 
-
-
     public function index() {
         $this->load->view('template/header');
         $data['titulo'] = "Cadastro de Pessoas";
         $this->load->view('pessoa', $data);
         $this->load->view('template/footer');
     }
+
     /*
     function inserir() {
         // Recebe os dados do formulário (visão)
@@ -160,5 +150,4 @@ class Pessoas extends CI_Controller {
         }
     }
     */
-
 }

@@ -4,7 +4,7 @@ html, body{
 }
 
 body{
-    background: #707070;
+    background: #fdfdfb;
     font-family: monospace;
     font-size: 16px;
     color: #2c2c2c;
@@ -12,6 +12,10 @@ body{
 
 a{
     color: #1c4f79;
+}
+
+a:hover{
+    color: #668cb3;
 }
 
 .no-center{
@@ -30,9 +34,9 @@ select{
 .container{
     width: 700px;
     min-height: 300px;
-    padding: 20px 30px 40px;
+    padding: 20px 50px 40px;
     margin: auto;
-    margin-top: 90px;
+    margin-top: 60px;
     text-align: center;
-    background: #7f7f7f;
+    background: #f9f9f9;
 }

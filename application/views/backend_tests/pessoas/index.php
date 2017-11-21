@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 	<meta charset="utf-8">
-	<title>Home</title>
+	<title>Projeto Currículo</title>
     <link rel="stylesheet" type="text/css" 
         href="<?php echo base_url('assets/backend_tests/all.css') ?>"/>
 </head>
@@ -16,24 +16,48 @@
             $this->load->view('backend_tests/pessoas/index', $data);
             $pessoas é uma array dentro da array $data que passou para a view pelo controller.
         -->
-        
         <a href="<?php echo base_url('pessoas/be_add') ?>">Add</a>
-        <a href="<?php echo base_url('pessoas/be_edit/1') ?>">Edit</a>
-        <a href="<?php echo base_url('pessoas/delete/1') ?>">Delete</a>
-        <pre class="no-center">
-            <b>PESSOAS:</b>
+        <a href="<?php echo base_url('home/be_index') ?>">Back</a>
+        <br><br><br>
 
-            <?php print_r($pessoas) ?>
+            <div class="no-center"><b>PESSOAS:</b></div><br><br>
+            
+            <?php foreach ($pessoas as $p): ?>
+                <div class="no-center">
+                    <?php echo $p->nome ?>:
+                    <a href="<?php echo base_url('pessoas/be_edit/'.$p->idpessoas) ?>">Edit</a>
+                    <a href="<?php echo base_url('pessoas/delete/'.$p->idpessoas) ?>">Delete</a>
+                    <pre>
+                        <?php print_r($p) ?>
+                    </pre>
+                </div>
+            <?php endforeach ?>
 
-            <b>CIDADES:</b>
+            <div class="no-center"><b>CIDADES:</b></div><br><br>
+            
+            <?php foreach ($cidades as $c): ?>
+                <div class="no-center">
+                    <?php echo $c->cidades ?>:
+                    <a href="<?php echo base_url('cidades/be_edit/'.$c->idcidades) ?>">Edit</a>
+                    <a href="<?php echo base_url('cidades/delete/'.$c->idcidades) ?>">Delete</a>
+                    <pre>
+                        <?php print_r($c) ?>
+                    </pre>
+                </div>
+            <?php endforeach ?>
 
-            <?php print_r($cidades) ?>
+            <div class="no-center"><b>CARGOS:</b></div><br><br>
 
-            <b>CARGOS:</b>
-
-            <?php print_r($cargos) ?>
-            </pre>
-
+            <?php foreach ($cargos as $c): ?>
+                <div class="no-center">
+                    <?php echo $c->cargos ?>:
+                    <a href="<?php echo base_url('cargos/be_edit/'.$c->idcargos) ?>">Edit</a>
+                    <a href="<?php echo base_url('cargos/delete/'.$c->idcargos) ?>">Delete</a>
+                    <pre>
+                        <?php print_r($c) ?>
+                    </pre>
+                </div>
+            <?php endforeach ?>
     </div>
 
 </body>
