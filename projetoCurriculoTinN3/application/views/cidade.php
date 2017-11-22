@@ -7,10 +7,11 @@
                     <legend><strong>Cadastro de Cidades</strong></legend>
                 </fieldset>
                 <label>Cidade </label>
-                <input class="form-control" type="text" name="cidades" required="required" placeholder="cidade" maxlength="20">
+                <input class="form-control" type="text" name="cidades" required="required" placeholder="Cidade" maxlength="20">
 
                 <button class="btn btn-success btn-block" type="submit" style="margin-top:10px;">Salvar </button>
-                <button class="btn btn-danger btn-block" type="reset">Cancelar </button>
+                <button class="btn btn-danger btn-block" type="reset">Limpar </button>
+                <a href="<?php base_url(); ?>home" class="btn btn-warning btn-block" type="reset">Voltar </a>
                 <?php echo form_close(); ?>
             </div>
         </div>

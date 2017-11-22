@@ -7,25 +7,25 @@
                     <legend><strong>Cadastro de Pessoas</strong></legend>
                 </fieldset>
                 <label>Nome </label>
-                <input class="form-control" type="text" name="nome" required="" placeholder="nome" maxlength="20">
+                <input class="form-control" type="text" name="nome" required="" placeholder="Nome" maxlength="20">
                 <label style="margin-top:6px;">Telefone </label>
-                <input class="form-control" type="number" name="telefone" required="" placeholder="telefone" maxlength="20">
+                <input class="form-control" type="number" name="telefone" required="" placeholder="Telefone" maxlength="20">
                 <label>Data De Nascimento</label>
-                <input class="form-control" type="date" name="dtNascimento" required="" placeholder="dtNascimento" maxlength="20">
+                <input class="form-control" type="date" name="dtNascimento" required="" placeholder="Nascimento" maxlength="20">
                 <label>Sexo</label>
                 <select class="form-control" name="sexo" required="">
-                    <!-- <option value="" selected="selected">Selecione...</option> -->
+                    <option value="" selected="selected">Selecione...</option>
                     <option value="masculino">Masculino</option>
                     <option value="feminino">Feminino</option>
                     <option value="outro">Outro</option>
                 </select>
                 <label>E-mail</label>
-                <input class="form-control" type="email" name="email" required="" placeholder="email" maxlength="20">
+                <input class="form-control" type="email" name="email" required="" placeholder="E-mail" maxlength="20">
                 <label>Descrição</label>
-                <input class="form-control" type="text" name="descricao" required="" placeholder="descriçao" maxlength="20">
+                <input class="form-control" type="text" name="descricao" required="" placeholder="Descriçao" maxlength="20">
                  <label>Estado Civil</label>
                 <select class="form-control" name="estadocivil" required="">
-                    <!-- <option value="" selected="selected">Selecione...</option> -->
+                    <option value="" selected="selected">Selecione...</option>
                     <option value="solteiro">Solteiro</option>
                     <option value="casado">Casado</option>
                     <option value="viuvo">Viúvo</option>
@@ -35,10 +35,11 @@
                   
                 </select>
                 <label>CPF</label>
-                <input class="form-control" type="text" name="cpf" required="" placeholder="cpf" maxlength="20">
+                <input class="form-control" type="text" name="cpf" required="" placeholder="CPF" maxlength="20">
                 <label>Cidades</label>
 
                 <select class="form-control" name="cidades" required="">
+                    <option value="" selected="selected">Selecione...</option>
                     <?php foreach ($cidades as $u): ?>
                         <option value="<?php echo $u->idcidades; ?>"><?php echo $u->cidades; ?></option>
                     <?php endforeach; ?>
@@ -47,6 +48,7 @@
                 <label>Cargo</label>
                 
                 <select class="form-control" name="cargos" required="">
+                    <option value="" selected="selected">Selecione...</option>
                     <?php foreach ($cargos as $u): ?>
                         <option value="<?php echo $u->idcargos; ?>"><?php echo $u->cargos; ?></option>
                     <?php endforeach; ?>
@@ -54,7 +56,8 @@
 
 
                 <button class="btn btn-success btn-block" type="submit" style="margin-top:10px;">Salvar </button>
-                <button class="btn btn-danger btn-block" type="reset">Cancelar </button>
+                <button class="btn btn-danger btn-block" type="reset">Limpar </button>
+                <a href="<?php base_url(); ?>home" class="btn btn-warning btn-block" type="reset">Voltar </a>
                 <?php echo form_close(); ?>
             </div>
         </div>
