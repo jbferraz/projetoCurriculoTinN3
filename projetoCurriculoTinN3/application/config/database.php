@@ -75,9 +75,16 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
+	/*
 	'hostname' => 'mysql762.umbler.com:41890',
 	'username' => 'projetocurriculo',
 	'password' => 'senacrstinn3',
+	//*/
+	//*
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	//*/
 	'database' => 'projetocurriculo',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

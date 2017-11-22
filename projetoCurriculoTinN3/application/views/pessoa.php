@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row" style="padding-top:18px;">
             <div class="col-lg-offset-4 col-lg-push-0 col-md-4 col-md-offset-2 col-md-pull-0">
-                <?php echo form_open('pessoa/inserir'); ?>
+                <?php echo form_open('pessoas/submit'); ?>
                 <fieldset>
                     <legend><strong>Cadastro de Pessoas</strong></legend>
                 </fieldset>
@@ -11,26 +11,26 @@
                 <label style="margin-top:6px;">Telefone </label>
                 <input class="form-control" type="number" name="telefone" required="" placeholder="telefone" maxlength="20">
                 <label>Data De Nascimento</label>
-                <input class="form-control" type="date" name="dtnascimento" required="" placeholder="dtNascimento" maxlength="20">
+                <input class="form-control" type="date" name="dtNascimento" required="" placeholder="dtNascimento" maxlength="20">
                 <label>Sexo</label>
                 <select class="form-control" name="sexo" required="">
-                    <option value="" selected="selected">Selecione...</option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Feminino">Feminino</option>
-                    <option value="Outro">Outro</option>
+                    <!-- <option value="" selected="selected">Selecione...</option> -->
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outro">Outro</option>
                 </select>
                 <label>E-mail</label>
                 <input class="form-control" type="email" name="email" required="" placeholder="email" maxlength="20">
                 <label>Descrição</label>
                 <input class="form-control" type="text" name="descricao" required="" placeholder="descriçao" maxlength="20">
                  <label>Estado Civil</label>
-                <select class="form-control" name="sexo" required="">
-                    <option value="" selected="selected">Selecione...</option>
-                    <option value="Masculino">Solteiro</option>
-                    <option value="Feminino">Casado</option>
-                    <option value="Viuvo">Viúvo</option>
+                <select class="form-control" name="estadocivil" required="">
+                    <!-- <option value="" selected="selected">Selecione...</option> -->
+                    <option value="solteiro">Solteiro</option>
+                    <option value="casado">Casado</option>
+                    <option value="viuvo">Viúvo</option>
 
-                     <option value="Divorciado">Divorciado</option>
+                     <option value="divorciado">Divorciado</option>
 
                   
                 </select>
@@ -38,17 +38,17 @@
                 <input class="form-control" type="text" name="cpf" required="" placeholder="cpf" maxlength="20">
                 <label>Cidades</label>
 
-                <select class="form-control" name="cidade" required="">
+                <select class="form-control" name="cidades" required="">
                     <?php foreach ($cidades as $u): ?>
-                        <option value="<?php echo $u->Cidades_id; ?>"><?php echo $u->cidades; ?></option>
+                        <option value="<?php echo $u->idcidades; ?>"><?php echo $u->cidades; ?></option>
                     <?php endforeach; ?>
                 </select>
 
                 <label>Cargo</label>
                 
-                <select class="form-control" name="cargo" required="">
+                <select class="form-control" name="cargos" required="">
                     <?php foreach ($cargos as $u): ?>
-                        <option value="<?php echo $u->Cargos_id; ?>"><?php echo $u->cargos; ?></option>
+                        <option value="<?php echo $u->idcargos; ?>"><?php echo $u->cargos; ?></option>
                     <?php endforeach; ?>
                 </select>
 

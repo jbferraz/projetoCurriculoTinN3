@@ -8,11 +8,15 @@ class Home extends CI_Controller {
         parent::__construct();
     }
 
-    public function index() {
+    function index() {
+        $data['completo'] = "Projeto Curriculo";
+
         $this->load->view('template/header');
-        $dados['completo'] = "Projeto Curriculo";
-        $this->load->view('Home',$dados);
+        $this->load->view('home', $data);
         $this->load->view('template/footer');
     }
-
+    
+    function be_index() { 
+        $this->load->view('backend_tests/home');
+    }
 }

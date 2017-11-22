@@ -1,0 +1,42 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #fdfdfb;
+    font-family: monospace;
+    font-size: 16px;
+    color: #2c2c2c;
+}
+
+a{
+    color: #1c4f79;
+}
+
+a:hover{
+    color: #668cb3;
+}
+
+.no-center{
+    text-align: left;
+}
+
+input, select{
+    width: 200px;
+    padding: 3px;
+    margin: 0;
+}
+
+select{
+    width: 210px;
+}
+.container{
+    width: 700px;
+    min-height: 300px;
+    padding: 20px 50px 40px;
+    margin: auto;
+    margin-top: 60px;
+    text-align: center;
+    background: #f9f9f9;
+}
