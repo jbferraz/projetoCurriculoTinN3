@@ -30,7 +30,8 @@ class Cidades extends CI_Controller {
 
         $test = duplicatedCidades($cidades, $fields, null);
         if ($test) {
-            redirect(base_url('cidades/be_add/'.$id));
+            //redirect(base_url('cidades/be_add/'.$id));
+            redirect(base_url('cidades'));
         } else {
             $result = $this->cd_m->submit($fields);
             redirect(base_url('cidades/be_index'));
@@ -66,5 +67,15 @@ class Cidades extends CI_Controller {
 		$result = $this->cd_m->delete($id);
 		
 		redirect(base_url('cidades/be_index'));
-	}
+    }
+    
+    public function index() {
+        $data['cidades'] = $this->cd_m->getCidades();
+
+        $data['titulo'] = "Cadastro de Cidades";
+
+        $this->load->view('template/header');
+        $this->load->view('cidade', $data);
+        $this->load->view('template/footer');
+    }
 }

@@ -30,7 +30,8 @@ class Cargos extends CI_Controller {
 
         $test = duplicatedCargos($cargos, $fields, null);
         if ($test) {
-            redirect(base_url('cargos/be_add/'.$id));
+            //redirect(base_url('cargos/be_add/'.$id));
+            redirect(base_url('cargos'));
         } else {
             $result = $this->cg_m->submit($fields);
             redirect(base_url('cargos/be_index'));
@@ -66,5 +67,15 @@ class Cargos extends CI_Controller {
 		$result = $this->cg_m->delete($id);
 		
 		redirect(base_url('cargos/be_index'));
-	}
+    }
+    
+    public function index() {
+        $data['cargos'] = $this->cg_m->getCargos();
+
+        $data['titulo'] = "Cadastro de Cargos";
+
+        $this->load->view('template/header');
+        $this->load->view('cargo', $data);
+        $this->load->view('template/footer');
+    }
 }
