@@ -59,7 +59,7 @@
                 <button class="btn btn-danger btn-block" type="reset">Limpar </button>
                 <a href="<?php base_url(); ?>home" class="btn btn-warning btn-block" type="reset">Voltar </a>
                 
-                <a id="btn-lista" class="col-lg-offset-4 col-lg-push-0 col-md-4 col-md-offset-2 col-md-pull-0"><i class="glyphicon glyphicon-th-list"></i>Listar</a>
+                <a id="btn-lista" class="btn btn-warning btn-block"><i class="glyphicon glyphicon-th-list"></i>Listar</a>
                 <?php echo form_close(); ?>
             </div>
         </div>
@@ -68,20 +68,20 @@
 <!-- Listagem de Paises -->
 <div class="col-lg-offset-4 col-lg-push-0 col-md-4 col-md-offset-2 col-md-pull-0"></div>
 <div id="div-lista" class="hide col-lg-offset-4 col-lg-push-0 col-md-4 col-md-offset-2 col-md-pull-0">
-    <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">Lista de Pessoas</h2>
+    <div class="">
+        <h2 class="">Lista de Pessoas</h2>
     </div>
-    <div class="mdl-card__supporting-text">
+    <div class="">
         <table class="col-lg-offset-4 col-lg-push-0 col-md-4 col-md-offset-2 col-md-pull-0">
             <thead>
                 <tr>
-                    <th class="mdl-data-table__cell--non-numeric">Pessoas</th>
-                    <th class="mdl-data-table__cell--non-numeric">???</th>
-                    <th class="mdl-data-table__cell--non-numeric">Funções</th>
+                    <th class="">Pessoas</th>
+                    <th class="">???</th>
+                    <th class="">Funções</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($pais as $p): ?>
+                <?php //foreach ($pais as $p): ?>
                     <tr>
                         <td><?php //echo $p->nomePais; ?></td>
                         <td><?php //echo $p->nomePaisCurto; ?></td>
@@ -89,14 +89,9 @@
                             <a  href="<?php //echo base_url() . 'pais/editar_pais/' . $p->idpais; ?>">Editar </a>
                         </td>
                     </tr>
-                <?php endforeach; ?>
+                <?php //endforeach; ?>
             </tbody>
         </table>
     </div>
 </div>
 <div class="col-lg-offset-4 col-lg-push-0 col-md-4 col-md-offset-2 col-md-pull-0"></div>
-<script type="text/javascript">
-    $("#btn-lista").click(function () {
-        $("#div-lista").toggleClass("hide");
-    });
-</script>
