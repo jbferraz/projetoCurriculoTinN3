@@ -34,7 +34,7 @@ class Cargos extends CI_Controller {
             redirect(base_url('cargos'));
         } else {
             $result = $this->cg_m->submit($fields);
-            redirect(base_url('cargos/be_index'));
+            redirect(base_url('cargos'));
         }
 	}
 

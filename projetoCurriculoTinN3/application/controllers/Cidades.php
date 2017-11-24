@@ -34,7 +34,7 @@ class Cidades extends CI_Controller {
             redirect(base_url('cidades'));
         } else {
             $result = $this->cd_m->submit($fields);
-            redirect(base_url('cidades/be_index'));
+            redirect(base_url('cidades'));
         }
 	}
 
