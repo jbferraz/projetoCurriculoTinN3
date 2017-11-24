@@ -23,16 +23,16 @@
                 <input class="form-control" type="email" name="email" required="" placeholder="E-mail" maxlength="20">
                 <label>Descrição</label>
                 <input class="form-control" type="text" name="descricao" required="" placeholder="Descriçao" maxlength="20">
-                 <label>Estado Civil</label>
+                <label>Estado Civil</label>
                 <select class="form-control" name="estadocivil" required="">
                     <option value="" selected="selected">Selecione...</option>
                     <option value="solteiro">Solteiro</option>
                     <option value="casado">Casado</option>
                     <option value="viuvo">Viúvo</option>
 
-                     <option value="divorciado">Divorciado</option>
+                    <option value="divorciado">Divorciado</option>
 
-                  
+
                 </select>
                 <label>CPF</label>
                 <input class="form-control" type="text" name="cpf" required="" placeholder="CPF" maxlength="20">
@@ -46,7 +46,7 @@
                 </select>
 
                 <label>Cargo</label>
-                
+
                 <select class="form-control" name="cargos" required="">
                     <option value="" selected="selected">Selecione...</option>
                     <?php foreach ($cargos as $u): ?>
@@ -58,8 +58,45 @@
                 <button class="btn btn-success btn-block" type="submit" style="margin-top:10px;">Salvar </button>
                 <button class="btn btn-danger btn-block" type="reset">Limpar </button>
                 <a href="<?php base_url(); ?>home" class="btn btn-warning btn-block" type="reset">Voltar </a>
+                
+                <a id="btn-lista" class="col-lg-offset-4 col-lg-push-0 col-md-4 col-md-offset-2 col-md-pull-0"><i class="glyphicon glyphicon-th-list"></i>Listar</a>
                 <?php echo form_close(); ?>
             </div>
         </div>
     </div>
 </div>
+<!-- Listagem de Paises -->
+<div class="col-lg-offset-4 col-lg-push-0 col-md-4 col-md-offset-2 col-md-pull-0"></div>
+<div id="div-lista" class="hide col-lg-offset-4 col-lg-push-0 col-md-4 col-md-offset-2 col-md-pull-0">
+    <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Lista de Pessoas</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+        <table class="col-lg-offset-4 col-lg-push-0 col-md-4 col-md-offset-2 col-md-pull-0">
+            <thead>
+                <tr>
+                    <th class="mdl-data-table__cell--non-numeric">Pessoas</th>
+                    <th class="mdl-data-table__cell--non-numeric">???</th>
+                    <th class="mdl-data-table__cell--non-numeric">Funções</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($pais as $p): ?>
+                    <tr>
+                        <td><?php //echo $p->nomePais; ?></td>
+                        <td><?php //echo $p->nomePaisCurto; ?></td>
+                        <td><a  href="<?php //echo base_url() . 'pais/excluir/' . $p->idpais; ?>">Excluir </a> | 
+                            <a  href="<?php //echo base_url() . 'pais/editar_pais/' . $p->idpais; ?>">Editar </a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="col-lg-offset-4 col-lg-push-0 col-md-4 col-md-offset-2 col-md-pull-0"></div>
+<script type="text/javascript">
+    $("#btn-lista").click(function () {
+        $("#div-lista").toggleClass("hide");
+    });
+</script>
