@@ -42,7 +42,7 @@ class Pessoas extends CI_Controller {
             redirect(base_url('pessoas'));
         } else {
             $result = $this->ps_m->submit($fields);
-            redirect(base_url('pessoas/be_index'));
+            redirect(base_url('pessoas'));
         }
 	}
 
