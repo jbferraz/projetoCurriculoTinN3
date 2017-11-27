@@ -36,25 +36,23 @@
                 </select>
                 <label>CPF</label>
                 <input class="form-control" type="text" name="cpf" required="" placeholder="CPF" maxlength="20">
+                
                 <label>Cidades</label>
-
                 <select class="form-control" name="cidades" required="">
                     <option value="" selected="selected">Selecione...</option>
                     <?php foreach ($cidades as $u): ?>
                         <option value="<?php echo $u->idcidades; ?>"><?php echo $u->cidades; ?></option>
                     <?php endforeach; ?>
                 </select>
-
+                
                 <label>Cargo</label>
-
                 <select class="form-control" name="cargos" required="">
                     <option value="" selected="selected">Selecione...</option>
                     <?php foreach ($cargos as $u): ?>
                         <option value="<?php echo $u->idcargos; ?>"><?php echo $u->cargos; ?></option>
                     <?php endforeach; ?>
                 </select>
-
-
+                
                 <button class="btn btn-success btn-block" type="submit" style="margin-top:10px;">Salvar </button>
                 <button class="btn btn-danger btn-block" type="reset">Limpar </button>
                 <a href="<?php base_url(); ?>home" class="btn btn-warning btn-block" type="reset">Voltar </a>
