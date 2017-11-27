@@ -64,30 +64,3 @@
             </div>
         </div>
     </div>
-</div>
-<!-- Listagem de Paises -->
-<div class="col-lg-offset-4 col-lg-push-0 col-md-4 col-md-offset-2 col-md-pull-0"></div>
-<div id="div-lista" class="hide col-lg-offset-4 col-lg-push-0 col-md-4 col-md-offset-2 col-md-pull-0">
-    <div class="">
-        <h2 class="">Lista de Pessoas</h2>
-    </div>
-    <div class="">
-        <table class="col-lg-offset-4 col-lg-push-0 col-md-4 col-md-offset-2 col-md-pull-0">
-           
-            <tbody>
-                <?php foreach ($pessoas as $u):  ?>
-                    <tr>
-                        <td><?php echo $u->nome; ?></td>
-                        
-                        <td><a  href="<?php //echo base_url() . 'pais/excluir/' . $p->idpais; ?>">Excluir </a> 
-                            <a  href="<?php //echo base_url() . 'pais/editar_pais/' . $p->idpais; ?>">Editar </a>
-                        </td>
-                        
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
-</div>
-<br>
-<br>
