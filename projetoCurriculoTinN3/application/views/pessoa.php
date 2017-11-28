@@ -68,18 +68,18 @@
 <div id="div-lista" class="hide col-lg-offset-4 col-lg-push-0 col-md-4 col-md-offset-2 col-md-pull-0"
     style="margin-right: 100%">
     <div class="">
-        <h2 class="">Lista de Pessoas</h2>
+        <h2 class="">Lista de Cidades</h2>
     </div>
     <div class="">
         <table class="col-lg-offset-4 col-lg-push-0 col-md-4 col-md-offset-2 col-md-pull-0">
            
             <tbody>
-                <?php foreach ($pessoas as $u):  ?>
+                <?php foreach ($cidades as $u):  ?>
                     <tr>
-                        <td><?php echo $u->nome; ?></td>
+                        <td><?php echo $u->cidades; ?></td>
                         
-                        <td><a  href="<?php echo base_url('pessoas/delete/'.$u->idpessoas) ?>">Excluir </a> 
-                            <a  href="<?php echo base_url('pessoas/edit/'.$u->idpessoas) ?>">Editar </a>
+                        <td><a  href="<?php echo base_url('pessoas/delete/'.$u->idcidades) ?>">Excluir </a> 
+                            <a  href="<?php echo base_url('pessoas/edit/'.$u->idcidades) ?>">Editar </a>
                         </td>
                         
                     </tr>
