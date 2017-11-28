@@ -10,6 +10,8 @@
         <link rel="stylesheet" href="<?php echo base_url('https://fonts.googleapis.com/css?family=Roboto:400,500,700'); ?>">
         <link rel="stylesheet" href="<?php echo base_url('assets/fonts/ionicons.min.css'); ?>">
         <link rel="stylesheet" href="<?php echo base_url('https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css'); ?>">
+        <script type="text/javascript" 
+            src="<?php echo base_url('assets/backend_tests/all.js') ?>"></script>
     </head>
     <body>
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -19,10 +21,10 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav">
-                        <li role="presentation"><a href="<?php base_url() ?>home">Home </a></li>
-                        <li role="presentation"><a href="<?php base_url() ?>pessoas">Cadastro Pessoas</a></li>
-                        <li role="presentation"><a href="<?php base_url() ?>cidades">Cadastro Cidades</a></li>
-                        <li role="presentation"><a href="<?php base_url() ?>cargos">Cadastro Cargos</a></li>
+                        <li role="presentation"><a href="<?php echo base_url('home') ?>">Home </a></li>
+                        <li role="presentation"><a href="<?php echo base_url('pessoas') ?>">Cadastro Pessoas</a></li>
+                        <li role="presentation"><a href="<?php echo base_url('cidades') ?>">Cadastro Cidades</a></li>
+                        <li role="presentation"><a href="<?php echo base_url('cargos') ?>">Cadastro Cargos</a></li>
                     </ul>
                 </div>
             </div>

@@ -36,12 +36,12 @@
 </div>
 <script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/jquery/jquery.min.js') ?>"></script>
-
-
-</body>
 <script type="text/javascript">
     $("#btn-lista").click(function () {
         $("#div-lista").toggleClass("hide");
     });
 </script>
+
+</body>
+
 </html>
