@@ -12,7 +12,7 @@
                 <label style="margin-top:6px;">Telefone </label>
                 <input class="form-control" type="text" name="nome" required="" placeholder="Nome" value="<?php echo $pessoas->telefone ?>" maxlength="20">
                 <label>Data De Nascimento</label>
-                <input class="form-control" type="text" name="nome" required="" placeholder="Nome" value="<?php echo $pessoas->DtNascimento ?>" maxlength="20">
+                <input class="form-control" type="text" name="nome" required="" placeholder="Nome" value="<?php echo $pessoas->dtNascimento ?>" maxlength="20">
                 <label>Sexo</label>
                 <input class="form-control" type="text" name="nome" required="" placeholder="Nome" value="<?php echo $pessoas->sexo ?>" maxlength="20">
                 <label>E-mail</label>
