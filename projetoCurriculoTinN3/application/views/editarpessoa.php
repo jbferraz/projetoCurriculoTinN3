@@ -3,11 +3,12 @@
         <div class="row" style="padding-top:18px;">
             <div class="col-lg-offset-4 col-lg-push-0 col-md-4 col-md-offset-2 col-md-pull-0">
                 <?php echo form_open('pessoas/submit'); ?>
+                <input type="hidden" name="hidden_id" value="<?php echo $pessoas->idpessoas ?>">
                 <fieldset>
                     <legend><strong>Cadastro de Pessoas</strong></legend>
                 </fieldset>
                 <label>Nome </label>
-                <input class="form-control" type="text" name="nome" required="" placeholder="Nome" maxlength="20">
+                <input class="form-control" type="text" name="nome" required="" placeholder="Nome" value="<?php echo $pessoas->nome ?>" maxlength="20">
                 <label style="margin-top:6px;">Telefone </label>
                 <input class="form-control" type="number" name="telefone" required="" placeholder="Telefone" maxlength="20">
                 <label>Data De Nascimento</label>

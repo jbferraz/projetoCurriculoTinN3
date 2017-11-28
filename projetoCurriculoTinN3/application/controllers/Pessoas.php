@@ -65,10 +65,10 @@ class Pessoas extends CI_Controller {
 
         $test = duplicatedPessoas($pessoas, $fields, $id);
         if ($test) {
-            redirect(base_url('pessoas/be_edit/'.$id));
+            redirect(base_url('pessoas'.$id));
         } else {
             $result = $this->ps_m->update($id, $fields);
-            redirect(base_url('pessoas/be_index'));
+            redirect(base_url('pessoas'));
         }
 	}
 
@@ -76,7 +76,7 @@ class Pessoas extends CI_Controller {
 	{
 		$result = $this->ps_m->delete($id);
 		
-		redirect(base_url('pessoas/be_index'));
+		redirect(base_url('pessoas'));
 	}
 
 
@@ -91,6 +91,19 @@ class Pessoas extends CI_Controller {
         $this->load->view('pessoa', $data);
         $this->load->view('template/footer');
     }
+
+    function edit($id)
+	{	
+		$data['pessoas'] = $this->ps_m->getPessoasById($id);
+        $data['cargos'] = $this->cg_m->getCargos();
+        $data['cidades'] = $this->cd_m->getCidades();
+
+        $data['titulo'] = "Editor de Pessoas";
+
+        $this->load->view('template/header');
+        $this->load->view('editarpessoa', $data);
+        $this->load->view('template/footer');
+	}
 
     /*
     function inserir() {

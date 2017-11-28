@@ -79,8 +79,8 @@
                     <tr>
                         <td><?php echo $u->nome; ?></td>
                         
-                        <td><a  href="<?php //echo base_url() . 'pais/excluir/' . $p->idpais; ?>">Excluir </a> 
-                            <a  href="<?php //echo base_url() . 'pais/editar_pais/' . $p->idpais; ?>">Editar </a>
+                        <td><a  href="<?php echo base_url('pessoas/delete/'.$u->idpessoas) ?>">Excluir </a> 
+                            <a  href="<?php echo base_url('pessoas/edit/'.$u->idpessoas) ?>">Editar </a>
                         </td>
                         
                     </tr>
