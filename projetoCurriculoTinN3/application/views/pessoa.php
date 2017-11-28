@@ -59,7 +59,7 @@
                 <button class="btn btn-danger btn-block" type="reset">Limpar </button>
                 <a href="<?php base_url(); ?>home" class="btn btn-warning btn-block" type="reset">Voltar </a>
                 
-                <a id="btn-lista" class="btn btn-warning btn-block"><i class="glyphicon glyphicon-th-list"></i>Listar</a>
+                <a id="btn-lista" class="btn btn-warning btn-block"><i class="glyphicon glyphicon-th-list"></i>&nbsp;Listar</a>
                 <?php echo form_close(); ?>
             </div>
         </div>
@@ -84,7 +84,7 @@
                         </td>
                         
                     </tr>
-                <?php endforeach; ?>
+                <?php endforeach ?>
             </tbody>
         </table>
     </div>

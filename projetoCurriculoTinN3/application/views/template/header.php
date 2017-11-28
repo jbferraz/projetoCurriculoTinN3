@@ -19,10 +19,10 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav">
-                        <li role="presentation"><a href="<?php base_url(); ?>home">Home </a></li>
-                        <li role="presentation"><a href="<?php base_url(); ?>pessoas">Cadastro Pessoas</a></li>
-                        <li role="presentation"><a href="<?php base_url(); ?>cidades">Cadastro Cidades</a></li>
-                        <li role="presentation"><a href="<?php base_url(); ?>cargos">Cadastro Cargos</a></li>
+                        <li role="presentation"><a href="<?php base_url() ?>home">Home </a></li>
+                        <li role="presentation"><a href="<?php base_url() ?>pessoas">Cadastro Pessoas</a></li>
+                        <li role="presentation"><a href="<?php base_url() ?>cidades">Cadastro Cidades</a></li>
+                        <li role="presentation"><a href="<?php base_url() ?>cargos">Cadastro Cargos</a></li>
                     </ul>
                 </div>
             </div>
