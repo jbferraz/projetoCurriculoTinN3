@@ -46,12 +46,12 @@
                 </select>
                 
                 <label>Cargo</label>
-                <select class="form-control" name="cargos" required="">
+                <select class="form-control" name="cargos" id="cargos" required="">
                     <option value="" selected="selected">Selecione...</option>
                     <?php foreach ($cargos as $u): ?>
                         <option value="<?php echo $u->idcargos; ?>"><?php echo $u->cargos; ?></option>
                     <?php endforeach; ?>
-                </select>
+                </select> 
                 
                 <button class="btn btn-success btn-block" type="submit" style="margin-top:10px;">Salvar </button>
                 <button class="btn btn-danger btn-block" type="reset">Limpar </button>

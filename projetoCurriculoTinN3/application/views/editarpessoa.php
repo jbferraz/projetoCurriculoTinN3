@@ -10,22 +10,34 @@
                 <label>Nome </label>
                 <input class="form-control" type="text" name="nome" required="" placeholder="Nome" value="<?php echo $pessoas->nome ?>" maxlength="20">
                 <label style="margin-top:6px;">Telefone </label>
-                <input class="form-control" type="text" name="nome" required="" placeholder="Nome" value="<?php echo $pessoas->telefone ?>" maxlength="20">
+                <input class="form-control" type="number" name="telefone" required="" placeholder="Telefone" value="<?php echo $pessoas->telefone ?>" maxlength="20">
                 <label>Data De Nascimento</label>
-                <input class="form-control" type="text" name="nome" required="" placeholder="Nome" value="<?php echo $pessoas->dtNascimento ?>" maxlength="20">
+                <input class="form-control" type="date" name="dtNascimento" required="" placeholder="Nascimento" value="<?php echo $pessoas->dtNascimento ?>" maxlength="20">
                 <label>Sexo</label>
-                <input class="form-control" type="text" name="nome" required="" placeholder="Nome" value="<?php echo $pessoas->sexo ?>" maxlength="20">
+                <select class="form-control" name="sexo" required="">
+                    <option value="" selected="<?php echo $pessoas->sexo ?>"></option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outro">Outro</option>
+                </select>
                 <label>E-mail</label>
-                <input class="form-control" type="text" name="nome" required="" placeholder="Nome" value="<?php echo $pessoas->email ?>" maxlength="20">
+                <input class="form-control" type="email" name="email" required="" placeholder="E-mail" value="<?php echo $pessoas->email ?>" maxlength="20">
                 <label>Descrição</label>
-                <input class="form-control" type="text" name="nome" required="" placeholder="Nome" value="<?php echo $pessoas->descricao ?>" maxlength="20">
+                <input class="form-control" type="text" name="descricao" required="" placeholder="Descriçao" value="<?php echo $pessoas->descricao ?>" maxlength="20">
                 <label>Estado Civil</label>
-                <input class="form-control" type="text" name="nome" required="" placeholder="Nome" value="<?php echo $pessoas->estadocivil ?>" maxlength="20">
+                <select class="form-control" name="estadocivil" required="">
+                    <option value="" selected="<?php echo $pessoas->estadocivil ?>"</option>
+                    <option value="solteiro">Solteiro</option>
+                    <option value="casado">Casado</option>
+                    <option value="viuvo">Viúvo</option>
+                    <option value="divorciado">Divorciado</option>
+                </select>
                 <label>CPF</label>
-                <input class="form-control" type="text" name="nome" required="" placeholder="Nome" value="<?php echo $pessoas->cpf ?>" maxlength="20">
+                <input class="form-control" type="text" name="cpf" required="" placeholder="CPF" value="<?php echo $pessoas->cpf ?>" maxlength="20">
+                
                 <label>Cidades</label>
                 <select class="form-control" name="cidades" id="cidades" required="">
-                <option value="" selected="selected">Selecione...</option>
+                <option value="" selected="<?php echo $u->cidades; ?>"</option>
                     <?php foreach ($cidades as $u): ?>
                         <option value="<?php echo $u->idcidades; ?>"<?php if ($u->idcidades == $pessoas->Cidades_id) echo ' selected' ?>> 
                         <?php echo $u->cidades; ?></option>
@@ -34,9 +46,9 @@
                 <!-- <script> selectElement('cidades', '<?php echo $pessoas->Cidades_id ?>') </script> -->
                 <label>Cargo</label>
                 <select class="form-control" name="cargos" id="cargos" required="">
-                    <option value="" selected="selected">Selecione...</option>
+                    <option value="" selected="<?php echo $pessoas->cargo ?>"></option>
                     <?php foreach ($cargos as $u): ?>
-                        <option value="<?php echo $u->idcargos; ?>"<?php if ($u->idcargos == $pessoas->Cargos_id) echo ' selected' ?>> 
+                        <option value="<?php echo $u->idcargos; ?>"<?php if ($u->idcargos == $pessoas->Cargos_id) echo 'selected' ?>> 
                         <?php echo $u->cargos; ?></option>
                     <?php endforeach; ?>
                 </select>
