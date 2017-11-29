@@ -31,9 +31,17 @@ class Cidades extends CI_Controller {
         $test = duplicatedCidades($cidades, $fields, null);
         if ($test) {
             //redirect(base_url('cidades/be_add/'.$id));
+            $this->session->set_flashdata('error_msg', 'Cadastro já existe');
             redirect(base_url('cidades'));
         } else {
             $result = $this->cd_m->submit($fields);
+            if ($result) {
+                $this->session->set_flashdata('success_msg', 'Cadastro inserido com sucesso');
+                //echo "it's true";
+            } else {
+                $this->session->set_flashdata('error_msg', 'Erro ao inserir');
+                //echo "it's false";
+            }
             redirect(base_url('cidades'));
         }
 	}
@@ -65,7 +73,13 @@ class Cidades extends CI_Controller {
     function delete($id)
 	{
 		$result = $this->cd_m->delete($id);
-		
+		if ($result) {
+            $this->session->set_flashdata('success_msg', 'Cadastro excluído com sucesso');
+            //echo "it's true";
+        } else {
+            $this->session->set_flashdata('error_msg', 'Erro ao excluir');
+            //echo "it's false";
+        }
 		redirect(base_url('cidades'));
     }
     

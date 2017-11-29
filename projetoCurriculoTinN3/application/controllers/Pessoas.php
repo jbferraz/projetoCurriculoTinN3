@@ -39,9 +39,17 @@ class Pessoas extends CI_Controller {
         $test = duplicatedPessoas($pessoas, $fields, null);
         if ($test) {
             //redirect(base_url('pessoas/be_add/'.$id));
+            $this->session->set_flashdata('error_msg', 'Cadastro já existe');
             redirect(base_url('pessoas'));
         } else {
             $result = $this->ps_m->submit($fields);
+            if ($result) {
+                $this->session->set_flashdata('success_msg', 'Cadastro inserido com sucesso');
+                //echo "it's true";
+            } else {
+                $this->session->set_flashdata('error_msg', 'Erro ao inserir');
+                //echo "it's false";
+            }
             redirect(base_url('pessoas'));
         }
 	}
@@ -65,9 +73,17 @@ class Pessoas extends CI_Controller {
 
         $test = duplicatedPessoas($pessoas, $fields, $id);
         if ($test) {
-            redirect(base_url('pessoas'.$id));
+            $this->session->set_flashdata('error_msg', 'Cadastro já existe');
+            redirect(base_url('pessoas/edit/'.$id));
         } else {
             $result = $this->ps_m->update($id, $fields);
+            if ($result) {
+                $this->session->set_flashdata('success_msg', 'Cadastro atualizado com sucesso');
+                //echo "it's true";
+            } else {
+                $this->session->set_flashdata('error_msg', 'Erro ao atualizar');
+                //echo "it's false";
+            }
             redirect(base_url('pessoas'));
         }
 	}
@@ -75,7 +91,13 @@ class Pessoas extends CI_Controller {
     function delete($id)
 	{
 		$result = $this->ps_m->delete($id);
-		
+		if ($result) {
+            $this->session->set_flashdata('success_msg', 'Cadastro excluído com sucesso');
+            //echo "it's true";
+        } else {
+            $this->session->set_flashdata('error_msg', 'Erro ao excluir');
+            //echo "it's false";
+        }
 		redirect(base_url('pessoas'));
 	}
 
