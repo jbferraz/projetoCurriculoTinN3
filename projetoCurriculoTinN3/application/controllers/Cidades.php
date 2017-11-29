@@ -63,10 +63,10 @@ class Cidades extends CI_Controller {
 
         $test = duplicatedCidades($cidades, $fields, $id);
         if ($test) {
-            redirect(base_url('cidades/be_edit/'.$id));
+            redirect(base_url('cidades/edit/'.$id));
         } else {
             $result = $this->cd_m->update($id, $fields);
-            redirect(base_url('cidades/be_index'));
+            redirect(base_url('cidades'));
         }
 	}
 
@@ -92,4 +92,17 @@ class Cidades extends CI_Controller {
         $this->load->view('cidade', $data);
         $this->load->view('template/footer');
     }
+
+    function edit($id)
+	{	
+		//$data['pessoas'] = $this->ps_m->getPessoasById($id);
+        //$data['cargos'] = $this->cg_m->getCargos();
+        $data['cidades'] = $this->cd_m->getCidades();
+
+        $data['titulo'] = "Editor de Cidades";
+
+        $this->load->view('template/header');
+        $this->load->view('editarcidade', $data);
+        $this->load->view('template/footer');
+	}
 }
