@@ -66,7 +66,7 @@ class Cidades extends CI_Controller {
 	{
 		$result = $this->cd_m->delete($id);
 		
-		redirect(base_url('cidades/be_index'));
+		redirect(base_url('cidades'));
     }
     
     public function index() {

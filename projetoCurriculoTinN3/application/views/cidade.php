@@ -11,12 +11,12 @@
 
                 <button class="btn btn-success btn-block" type="submit" style="margin-top:10px;">Salvar </button>
                 <button class="btn btn-danger btn-block" type="reset">Limpar </button>
-                <a href="<?php base_url(); ?>home" class="btn btn-warning btn-block" type="reset">Voltar </a>
+                <a href="<?php echo base_url('home') ?>" class="btn btn-warning btn-block" type="reset">Voltar </a>
+                
+                <a id="btn-lista" class="btn btn-info btn-block"><i class="glyphicon glyphicon-th-list"></i>&nbsp;Listar</a>
                 <?php echo form_close(); ?>
                 <br>
-                <a id="btn-lista" class="btn btn-warning btn-block"><i class="glyphicon glyphicon-th-list"></i>&nbsp;Listar</a>
 
-                <?php echo form_close(); ?>
             </div>
         </div>
     </div>
@@ -36,7 +36,7 @@
                     <tr>
                         <td><?php echo $u->cidades; ?></td>
                         
-                        <td><a  href="<?php echo base_url('pessoas/delete/'.$u->idcidades) ?>">Excluir </a> 
+                        <td><a  href="<?php echo base_url('cidades/delete/'.$u->idcidades) ?>">Excluir </a> 
                         </td>
                         
                     </tr>

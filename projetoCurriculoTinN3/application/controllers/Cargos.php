@@ -66,7 +66,7 @@ class Cargos extends CI_Controller {
 	{
 		$result = $this->cg_m->delete($id);
 		
-		redirect(base_url('cargos/be_index'));
+		redirect(base_url('cargos'));
     }
     
     public function index() {
