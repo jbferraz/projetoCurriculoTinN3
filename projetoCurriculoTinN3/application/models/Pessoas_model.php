@@ -19,6 +19,35 @@ class Pessoas_model extends CI_Model {
             return false;
     }
 
+    function getAllPessoas()
+    {
+        /*
+        $this->db->order_by('nome', 'asc');
+        $this->db->from('pessoas');
+        $this->db->join('cidades', 'cidades.idcidades = pessoas.Cidades_id');
+        $this->db->join('cargos', 'cargos.idcargos = pessoas.Cargos_id');
+
+        $query = $this->db->get();
+        
+        if ($query->num_rows() > 0)
+            return $query->result();
+        else
+            return false;
+        */
+
+        $this->db->select('pessoas.*, cidades.cidades, cargos.cargos');
+        $this->db->from('pessoas, cidades, cargos');
+        $this->db->where('cidades.idcidades = pessoas.Cidades_id');
+        $this->db->where('cargos.idcargos = pessoas.Cargos_id');
+
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0)
+            return $query->result();
+        else
+            return false;
+    }
+
     function getPessoasById($id)
     {
         $this->db->where('idpessoas', $id);

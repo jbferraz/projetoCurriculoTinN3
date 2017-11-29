@@ -33,6 +33,19 @@
                 </div>
             <?php endforeach ?>
 
+            <div class="no-center"><b>PESSOAS ALL:</b></div><br><br>
+            
+            <?php foreach ($pessoasall as $p): ?>
+                <div class="no-center">
+                    <?php echo $p->nome ?>:
+                    <a href="<?php echo base_url('pessoas/be_edit/'.$p->idpessoas) ?>">Edit</a>
+                    <a href="<?php echo base_url('pessoas/delete/'.$p->idpessoas) ?>">Delete</a>
+                    <pre>
+                        <?php print_r($p) ?>
+                    </pre>
+                </div>
+            <?php endforeach ?>
+
             <div class="no-center"><b>CIDADES:</b></div><br><br>
             
             <?php foreach ($cidades as $c): ?>

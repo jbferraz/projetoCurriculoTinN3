@@ -14,8 +14,10 @@ class Pessoas extends CI_Controller {
     function be_index()
 	{
         $data['pessoas'] = $this->ps_m->getPessoas();
+        $data['pessoasall'] = $this->ps_m->getAllPessoas();
         $data['cargos'] = $this->cg_m->getCargos();
         $data['cidades'] = $this->cd_m->getCidades();
+
         
         $this->load->view('backend_tests/pessoas/index', $data);
     }
@@ -103,7 +105,7 @@ class Pessoas extends CI_Controller {
 
 
     public function index() {
-        $data['pessoas'] = $this->ps_m->getPessoas();
+        $data['pessoas'] = $this->ps_m->getAllPessoas();
         $data['cargos'] = $this->cg_m->getCargos();
         $data['cidades'] = $this->cd_m->getCidades();
 
