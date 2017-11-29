@@ -46,7 +46,14 @@
         <h2 class="">Lista de Cidades</h2>
     </div>
     <div class="">
-        <table class="col-lg-offset-4 col-lg-push-0 col-md-4 col-md-offset-2 col-md-pull-0">
+        <table class="table">
+            <thead >
+                <tr>
+                    
+                    <th scope="col">Cidade</th>
+                    <th scope="col">Funções</th>
+                </tr>
+            </thead>
            
             <tbody>
                 <?php foreach ($cidades as $u):  ?>
@@ -54,6 +61,7 @@
                         <td><?php echo $u->cidades; ?></td>
                         
                         <td><a  href="<?php echo base_url('cidades/delete/'.$u->idcidades) ?>">Excluir </a> 
+                             <a  href="<?php echo base_url('cidades/edit/' . $u->idcidades) ?>">Editar </a>
                         </td>
                         
                     </tr>

@@ -15,7 +15,7 @@
                 <?php echo form_open('pessoas/update'); ?>
                 <input type="hidden" name="hidden_id" value="<?php echo $pessoas->idpessoas ?>">
                 <fieldset>
-                    <legend><strong>Cadastro de Pessoas</strong></legend>
+                    <legend><strong>Editar Pessoa</strong></legend>
                 </fieldset>
                 <label>Nome </label>
                 <input class="form-control" type="text" name="nome" required="" placeholder="Nome" value="<?php echo $pessoas->nome ?>" maxlength="20">
@@ -63,7 +63,7 @@
                     <?php endforeach; ?>
                 </select>
                 <!-- <script> selectElement('cargos', '<?php echo $pessoas->Cargos_id ?>') </script> -->
-                <button class="btn btn-success btn-block" type="submit" style="margin-top:10px;">Salvar </button>
+                <button class="btn btn-success btn-block" type="submit" style="margin-top:10px;">Atualizar </button>
                 <button class="btn btn-danger btn-block" type="reset">Limpar </button>
                 <a href="<?php echo base_url(); ?>pessoas" class="btn btn-warning btn-block" type="reset">Voltar </a>
                 

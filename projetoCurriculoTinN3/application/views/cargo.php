@@ -43,14 +43,21 @@
         <h2 class="">Lista de Cargos</h2>
     </div>
     <div class="">
-        <table class="col-lg-offset-4 col-lg-push-0 col-md-4 col-md-offset-2 col-md-pull-0">
-           
+         <table class="table">
+            <thead >
+                <tr>
+                    
+                    <th scope="col">Cargo</th>
+                    <th scope="col">Funções</th>
+                </tr>
+            </thead>
             <tbody>
                 <?php foreach ($cargos as $u):  ?>
                     <tr>
                         <td><?php echo $u->cargos; ?></td>
                         
-                        <td><a  href="<?php echo base_url('cargos/delete/'.$u->idcargos) ?>">Excluir </a> 
+                        <td><a  href="<?php echo base_url('cargos/delete/'.$u->idcargos) ?>">Excluir </a>
+                          <a  href="<?php echo base_url('cargos/edit/' . $u->idcargos) ?>">Editar </a>
                             
                         </td>
                         
