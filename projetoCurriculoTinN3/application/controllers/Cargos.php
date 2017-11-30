@@ -96,7 +96,7 @@ class Cargos extends CI_Controller {
     function edit($id)
 	{	
 		//$data['pessoas'] = $this->ps_m->getPessoasById($id);
-        $data['cargos'] = $this->cg_m->getCargos();
+        $data['cargos'] = $this->cg_m->getCargosById();
         //$data['cidades'] = $this->cd_m->getCidades();
 
         $data['titulo'] = "Editor de Cargos";
