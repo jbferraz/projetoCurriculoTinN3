@@ -15,10 +15,42 @@ class Pessoas extends CI_Controller {
 	{
         $data['pessoas'] = $this->ps_m->getPessoas();
         $data['pessoasall'] = $this->ps_m->getAllPessoas();
-        $data['cargos'] = $this->cg_m->getCargos();
         $data['cidades'] = $this->cd_m->getCidades();
+        $data['cargos'] = $this->cg_m->getCargos();
 
-        
+        for ($i = 0; $i < count($data['cargos']); $i++) 
+            $indexcargos[$data['cargos'][$i]->idcargos] = $i;
+        for ($i = 0; $i < count($data['cidades']); $i++) 
+            $indexcidades[$data['cidades'][$i]->idcidades] = $i;
+
+        $data['indexcidades'] = $indexcidades;
+        $data['indexcargos'] = $indexcargos;
+
+        foreach ($data['pessoas'] as $p) 
+        {
+            $p->cidade = 
+                $data['cidades'][$indexcidades[$p->Cidades_id]]->cidades;
+            $p->cargo = 
+                $data['cargos'][$indexcargos[$p->Cargos_id]]->cargos; 
+        }
+
+        unset($indexcidades);
+        unset($indexcargos);
+
+        /*
+        $data['pessoas'][0]->cargo = 
+            $data['cargos']
+            [
+                $data['indexcargos']
+                [
+                    $data['pessoas'][0]->Cidades_id
+                ]
+            ]->cargos;
+        */
+
+        //var_dump($data);
+        //print_r($data);
+
         $this->load->view('backend_tests/pessoas/index', $data);
     }
     
@@ -104,7 +136,8 @@ class Pessoas extends CI_Controller {
 	}
 
 
-    public function index() {
+    public function index() 
+    {
         $data['pessoas'] = $this->ps_m->getAllPessoas();
         $data['cargos'] = $this->cg_m->getCargos();
         $data['cidades'] = $this->cd_m->getCidades();

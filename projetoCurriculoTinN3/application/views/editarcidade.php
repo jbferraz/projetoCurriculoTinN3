@@ -29,7 +29,7 @@
 
                 <button class="btn btn-success btn-block" type="submit" style="margin-top:10px;">Atualizar </button>
                 <button class="btn btn-danger btn-block" type="reset">Limpar </button>
-                <a href="<?php echo base_url('home') ?>" class="btn btn-warning btn-block" type="reset">Voltar </a>
+                <a href="<?php echo base_url('cidades') ?>" class="btn btn-warning btn-block" type="reset">Voltar </a>
                 
                 
                 <?php echo form_close(); ?>

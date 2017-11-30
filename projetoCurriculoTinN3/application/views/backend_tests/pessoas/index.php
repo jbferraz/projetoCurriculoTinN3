@@ -30,9 +30,10 @@
                     <pre>
                         <?php print_r($p) ?>
                     </pre>
-                    <?php echo 'pessoas/Cidades_id '.$p->Cidades_id ?>
-                    <?php echo 'cidades '.$p->Cidades_id ?>
-                    <br><br>
+                            
+                    <?php echo 'cidade: '.$cidades[$indexcidades[$p->Cidades_id]]->cidades ?><br>
+                    <?php echo 'cargo: '.$cargos[$indexcargos[$p->Cargos_id]]->cargos ?>
+                    <br><br><br>
                 </div>
             <?php endforeach ?>
 

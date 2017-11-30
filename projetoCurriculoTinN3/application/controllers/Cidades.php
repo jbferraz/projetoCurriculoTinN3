@@ -63,9 +63,17 @@ class Cidades extends CI_Controller {
 
         $test = duplicatedCidades($cidades, $fields, $id);
         if ($test) {
+            $this->session->set_flashdata('error_msg', 'Cadastro já existe');
             redirect(base_url('cidades/edit/'.$id));
         } else {
             $result = $this->cd_m->update($id, $fields);
+            if ($result) {
+                $this->session->set_flashdata('success_msg', 'Cadastro atualizado com sucesso');
+                //echo "it's true";
+            } else {
+                $this->session->set_flashdata('error_msg', 'Erro ao atualizar');
+                //echo "it's false";
+            }
             redirect(base_url('cidades'));
         }
 	}
@@ -83,6 +91,7 @@ class Cidades extends CI_Controller {
 		redirect(base_url('cidades'));
     }
     
+    
     public function index() {
         $data['cidades'] = $this->cd_m->getCidades();
 
@@ -95,8 +104,6 @@ class Cidades extends CI_Controller {
 
     function edit($id)
 	{	
-		//$data['pessoas'] = $this->ps_m->getPessoasById($id);
-        //$data['cargos'] = $this->cg_m->getCargos();
         $data['cidades'] = $this->cd_m->getCidadesById($id);
 
         $data['titulo'] = "Editor de Cidades";

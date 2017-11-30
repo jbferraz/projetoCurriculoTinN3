@@ -34,7 +34,8 @@ class Pessoas_model extends CI_Model {
         else
             return false;
         */
-
+        
+        $this->db->order_by('nome', 'asc');
         $this->db->select('pessoas.*, cidades.cidades, cargos.cargos');
         $this->db->from('pessoas, cidades, cargos');
         $this->db->where('cidades.idcidades = pessoas.Cidades_id');

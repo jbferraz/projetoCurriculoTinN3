@@ -63,9 +63,17 @@ class Cargos extends CI_Controller {
 
         $test = duplicatedCargos($cargos, $fields, $id);
         if ($test) {
+            $this->session->set_flashdata('error_msg', 'Cadastro já existe');
             redirect(base_url('cargos/edit/'.$id));
         } else {
             $result = $this->cg_m->update($id, $fields);
+            if ($result) {
+                $this->session->set_flashdata('success_msg', 'Cadastro atualizado com sucesso');
+                //echo "it's true";
+            } else {
+                $this->session->set_flashdata('error_msg', 'Erro ao atualizar');
+                //echo "it's false";
+            }
             redirect(base_url('cargos'));
         }
 	}
@@ -83,6 +91,7 @@ class Cargos extends CI_Controller {
 		redirect(base_url('cargos'));
     }
     
+
     public function index() {
         $data['cargos'] = $this->cg_m->getCargos();
 
@@ -95,9 +104,7 @@ class Cargos extends CI_Controller {
 
     function edit($id)
 	{	
-		//$data['pessoas'] = $this->ps_m->getPessoasById($id);
         $data['cargos'] = $this->cg_m->getCargosById($id);
-        //$data['cidades'] = $this->cd_m->getCidades();
 
         $data['titulo'] = "Editor de Cargos";
 
