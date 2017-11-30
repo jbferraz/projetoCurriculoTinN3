@@ -97,7 +97,7 @@ class Cidades extends CI_Controller {
 	{	
 		//$data['pessoas'] = $this->ps_m->getPessoasById($id);
         //$data['cargos'] = $this->cg_m->getCargos();
-        $data['cidades'] = $this->cd_m->getCidadesById();
+        $data['cidades'] = $this->cd_m->getCidadesById($id);
 
         $data['titulo'] = "Editor de Cidades";
 
